@@ -1,11 +1,27 @@
-// function must return morse code from letter input
-
+import { } from "./functions.js";
 // function must return a . when the letter e is inputted
-
-// each letters morse representation should be followed by 3 empty spaces
-
-// each space should return and addintional 4 empty spaces
-
-// function should accept a string of english characters and return a string of morse characters
-// "the quick brown fox jumped over the lazy dog" 
-// "-   ....   .       --.-   ..-   ..   -.-.   -.-       -...   .-.   ---   .--   -.   ..-.   ---   -..-       .---   ..-   --   .--.   ...       ---   ...-   .   .-.       -   ....   .       .-..   .-   --..   -.--       -..   ---   --.   ..."
+describe("testing englishToMorseCode()", () => {
+  it("should translate e to .   ", () => {
+    // ARRANGE
+    let result;
+    // ACT
+    result = englishToMorseCode("e");
+    // ASSERT -> TEST WILL PASS OF FAIL
+    expect(result).toBe(".   ");
+  });
+  // each space should return and addintional 4 empty spaces
+  it ("should translate  to    ", ()=> {
+    let result;
+    result = englishToMorseCode(" ");
+    expect(result).toBe("    ")
+  });
+  // function should accept a string of english characters and return a string of morse characters
+  // "the quick brown fox jumped over the lazy dog" 
+  // "-   ....   .       --.-   ..-   ..   -.-.   -.-       -...   .-.   ---   .--   -.   ..-.   ---   -..-       .---   ..-   --   .--.   ...       ---   ...-   .   .-.       -   ....   .       .-..   .-   --..   -.--       -..   ---   --.   ..."
+  it("should return correctly translated sentences in morse code", ()=>{
+    let result;
+    result = englishToMorseCode("the quick brown fox jumped over the lazy dogs");
+    expect(result).toBe("-   ....   .       --.-   ..-   ..   -.-.   -.-       -...   .-.   ---   .--   -.   ..-.   ---   -..-       .---   ..-   --   .--.   ...       ---   ...-   .   .-.       -   ....   .       .-..   .-   --..   -.--       -..   ---   --.   ...")
+  });
+});
+  
