@@ -1,4 +1,4 @@
-import { } from "./functions.js";
+import {englishToMorseCode} from "./functions.js";
 // function must return a . when the letter e is inputted
 describe("testing englishToMorseCode()", () => {
   it("should translate e to .   ", () => {
@@ -20,8 +20,14 @@ describe("testing englishToMorseCode()", () => {
   // "-   ....   .       --.-   ..-   ..   -.-.   -.-       -...   .-.   ---   .--   -.   ..-.   ---   -..-       .---   ..-   --   .--.   ...       ---   ...-   .   .-.       -   ....   .       .-..   .-   --..   -.--       -..   ---   --.   ..."
   it("should return correctly translated sentences in morse code", ()=>{
     let result;
-    result = englishToMorseCode("the quick brown fox jumped over the lazy dogs");
-    expect(result).toBe("-   ....   .       --.-   ..-   ..   -.-.   -.-       -...   .-.   ---   .--   -.   ..-.   ---   -..-       .---   ..-   --   .--.   ...       ---   ...-   .   .-.       -   ....   .       .-..   .-   --..   -.--       -..   ---   --.   ...")
+    result = englishToMorseCode("the quick brown fox jumps over the lazy dogs");
+    expect(result).toBe("-   ....   .       --.-   ..-   ..   -.-.   -.-       -...   .-.   ---   .--   -.       ..-.   ---   -..-       .---   ..-   --   .--.   ...       ---   ...-   .   .-.       -   ....   .       .-..   .-   --..   -.--       -..   ---   --.   ...   ")
+  });
+  it("should return correctly translated numbers in morse code", ()=> {
+    let result;
+    result = englishToMorseCode("1234567890")
+    expect(result).toBe(".----   ..---   ...--   ....-   .....   -....   --...   ---..   ----.   -----   ")
   });
 });
   
+// if input is not valid return an error alert
