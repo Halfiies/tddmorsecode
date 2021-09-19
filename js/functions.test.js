@@ -28,6 +28,17 @@ describe("testing englishToMorseCode()", () => {
     result = englishToMorseCode("1234567890")
     expect(result).toBe(".----   ..---   ...--   ....-   .....   -....   --...   ---..   ----.   -----   ")
   });
+  it("should handle capital letters", () =>{
+    let result;
+    result = englishToMorseCode("H")
+    expect(result).toBe("....   ")
+  });
+  
+  it("should return an error message when input is invalid", () =>{
+    let result;
+    result = englishToMorseCode("+")
+    expect(result).toBe("Invalid input detected")
+  });
 });
   
 // if input is not valid return an error alert
