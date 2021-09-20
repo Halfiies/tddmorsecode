@@ -8,11 +8,20 @@
   <title>Document</title>
 </head>
 <body>
-  <label for="english">English:</label>
-  <input type="text" id="english" name="english">
-  <label for="fname">Morsecode:</label>
-  <input type="text" id="morseCode" name="morsecode"> 
-  <button id="translate">translate</button>
-<script src="./js/functions.js"> </script>
-</body>
+  <h1>English to Morsecode</h1>
+  <div class="translator">
+      <textarea name="englishinput" id="english" cols="40" rows="10"></textarea>
+      <textarea name="morseCode" id="morseCode" cols="40" rows="10"></textarea>
+  </div>
+  <br/>
+  <button id="translate">Translate</button>
+  <h1> Morsecode to English</h1>
+  <div class="translator">
+    <textarea name="morseInput" id="morse" cols="40" rows="10"></textarea>
+    <textarea name="englishOutput" id="englishOutput" cols="40" rows="10"></textarea>
+  </div>
+  <br/>
+  <button id="translate">Translate</button>
+  <script src="main.js"> </script>
+  </body>
 </html> 

@@ -1,11 +1,12 @@
 {
   "name": "projects",
   "version": "1.0.0",
+  "type": "module",
   "description": "morse code translator",
   "main": "main.js",
   "scripts": {
     "test": "jest js --watch",
-    "coverage": "jest --coverage js"
+    "coverage": "jest --coverage js",
   },
   "repository": {
     "type": "git",

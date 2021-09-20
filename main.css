@@ -1,4 +1,27 @@
 * {
-  margin: 0;
-  padding: 0;
+  background-color: #6C757D;
+}
+
+div {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+}
+
+textarea {
+  background-color: #DEE2E6;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  margin-left: 20%;
+  background-color: #343A40;
+  color: #F8F9FA;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  color: #F8F9FA;
 }

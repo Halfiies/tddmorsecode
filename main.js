@@ -77,35 +77,41 @@ const alphabetMorse ={
   "----.   ": "9",
   "-----   ": "0",
  }
-
+// return the value when a key is entered
+//input innto an array
+// const english = document.querySelector(".english")
+// const morseCode = document.querySelector(".morseCode")
+// const translate = document.querySelector(".translate")
 const validInput = /^[0-9a-z\s]+$/gi;
+let inputString = document.querySelector("#english")
+let outputString = document.querySelector("#morseCode")
+const button = document.querySelector("#translate")
 const englishToMorseCode = (input) => {
-  console.log(input)
-  console.log(input.match(validInput))
-  console.log(typeof(input))
-   if ((input.match(validInput)) && typeof(input)=="string") {
-    
-     console.log("valid")
-     const lowerCaseInput = input.toLowerCase() 
-     const inputArray = Array.from(lowerCaseInput);
-     const outputArray = inputArray.map(character => {
-        return morseAlphabet[character]});
-        
-   // check for not a string, invalid characters in the string 
-   // if not valid return "invalid input deteced" else 
+ console.log(input);
+if ((input.match(validInput)) && typeof(input)=="string") {
+    const lowerCaseInput = input.toLowerCase() 
+    const inputArray = Array.from(lowerCaseInput);
+    const outputArray = inputArray.map(character => {
+       return morseAlphabet[character]});
+       
+ 
   
-    // compares input to key and returns value for each
+    return outputArray.join("");
+  }
+  else {
    
-     return outputArray.join("");
-   }
-   else {
-    console.log("invalid")
-    console.log
-    return "Invalid input detected"
-   }
- };
-
-console.log(englishToMorseCode("1234567890"));
+   return "Invalid input detected"
+  }
+};
+button.addEventListener("click", function() {
+  console.log("clicking");
+  console.log(inputString.value);
+  const output = englishToMorseCode(inputString.value);
+  outputString.value = output;
+});
 // let letter = "a";
 // console.log(letter)
 // console.log(morseAlphabet[letter])
+// script for button to convert the input
+
+

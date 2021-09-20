@@ -87,8 +87,6 @@ export const englishToMorseCode = (input) => {
   // tolowercase function
   
   if ((input.match(validInput)) && typeof(input)=="string") {
-    
-    
     const lowerCaseInput = input.toLowerCase() 
     const inputArray = Array.from(lowerCaseInput);
     const outputArray = inputArray.map(character => {
