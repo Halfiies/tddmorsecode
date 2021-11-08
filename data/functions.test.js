@@ -1,4 +1,4 @@
-import {englishToMorseCode} from "./functions.js";
+import {englishToMorseCode, morsecodeToEnglish} from "./functions.js";
 // function must return a . when the letter e is inputted
 describe("testing englishToMorseCode()", () => {
   it("should translate e to .   ", () => {
@@ -33,7 +33,7 @@ describe("testing englishToMorseCode()", () => {
     result = englishToMorseCode("H")
     expect(result).toBe("....   ")
   });
-  
+  // if input is not valid return an error alert
   it("should return an error message when input is invalid", () =>{
     let result;
     result = englishToMorseCode("+")
@@ -41,4 +41,13 @@ describe("testing englishToMorseCode()", () => {
   });
 });
   
-// if input is not valid return an error alert
+describe("testing morsecodetoenglish()", () => {
+  it("should translate .     to e", () => {
+    // ARRANGE
+    let result;
+    // ACT
+    result = morsecodeToEnglish(".   ");
+    // ASSERT -> TEST WILL PASS OF FAIL
+    expect(result).toBe("e");
+  })
+})

@@ -83,6 +83,7 @@ const alphabetMorse ={
 // const morseCode = document.querySelector(".morseCode")
 // const translate = document.querySelector(".translate")
 const validInput = /^[0-9a-z\s]+$/gi;
+const validMorse = /.-\s/gi;
 export const englishToMorseCode = (input) => {
   // tolowercase function
   
@@ -108,3 +109,24 @@ export const englishToMorseCode = (input) => {
 // let letter = "a";
 // console.log(letter)
 // console.log(morseAlphabet[letter])
+export const morsecodeToEnglish = (input) => {
+  // tolowercase function
+  
+  if ((input.match(validMorse)) && typeof(input)=="string") {
+    const lowerCaseInput = input.toLowerCase() 
+    const inputArray = Array.from(lowerCaseInput);
+    const outputArray = inputArray.map(character => {
+       return alphabetMorse[character]});
+       
+  // check for not a string, invalid characters in the string 
+  // if not valid return "invalid input deteced" else 
+ 
+   // compares input to key and returns value for each
+  
+    return outputArray.join("");
+  }
+  else {
+   
+   return "Invalid input detected"
+  }
+};
